@@ -4,14 +4,14 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-/* Liens de navigation */
+/* Liens de navigation — pointeront vers les futures pages */
 const navLinks = [
-  { label: "Accueil", href: "#hero" },
-  { label: "À propos", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Réalisations", href: "#before-after" },
-  { label: "Boutique", href: "#boutique" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/" },
+  { label: "À propos", href: "/a-propos" },
+  { label: "Services", href: "/services" },
+  { label: "Réalisations", href: "/realisations" },
+  { label: "Boutique", href: "/boutique" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 /* Icône panier (SVG) */
