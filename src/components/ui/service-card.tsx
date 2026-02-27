@@ -13,7 +13,7 @@ interface ServiceCardProps {
 /* URLs Unsplash temporaires en attendant les vraies images */
 const unsplashImages: Record<string, string> = {
   "LED d'ambiance":
-    "https://images.unsplash.com/photo-1621993202323-eb4e4e025e8a?w=600&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&h=400&fit=crop",
   "Ciel étoilé":
     "https://images.unsplash.com/photo-1534996858221-380b92700493?w=600&h=400&fit=crop",
   CarPlay:
@@ -23,7 +23,7 @@ const unsplashImages: Record<string, string> = {
   Polissage:
     "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=600&h=400&fit=crop",
   Jantes:
-    "https://images.unsplash.com/photo-1611651338412-8403fa8b3153?w=600&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?w=600&h=400&fit=crop",
 };
 
 export const ServiceCard = ({

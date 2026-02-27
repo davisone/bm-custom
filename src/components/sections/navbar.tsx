@@ -2,13 +2,15 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 /* Liens de navigation */
 const navLinks = [
   { label: "Accueil", href: "#hero" },
+  { label: "À propos", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Réalisations", href: "#before-after" },
-  { label: "Instagram", href: "#instagram" },
+  { label: "Boutique", href: "#boutique" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -135,11 +137,15 @@ export const Navbar = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <a
-              href="#hero"
-              className="font-display text-2xl font-bold text-gold transition-colors hover:text-gold-light"
-            >
-              BM Custom
+            <a href="#hero" className="transition-opacity hover:opacity-80">
+              <Image
+                src="/logo-bm_custom.png"
+                alt="BM Custom"
+                width={120}
+                height={40}
+                className="h-10 w-auto md:h-12"
+                priority
+              />
             </a>
 
             {/* Liens de navigation (desktop) */}
