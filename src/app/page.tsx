@@ -1,10 +1,11 @@
 import { Navbar } from "@/components/sections/navbar";
+import { Hero } from "@/components/sections/hero";
 
 const HomePage = () => {
   return (
     <main>
       <Navbar />
-      <h1 className="text-gold text-4xl text-center py-20">BM Custom</h1>
+      <Hero />
     </main>
   );
 };
