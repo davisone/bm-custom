@@ -23,7 +23,7 @@ export const TireTrackDivider = ({ className = "" }: TireTrackDividerProps) => {
         alt=""
         width={1440}
         height={100}
-        className="h-12 w-full object-cover opacity-10 brightness-200 md:h-16"
+        className="h-12 w-full object-cover brightness-200 md:h-16"
         priority={false}
       />
     </motion.div>
