@@ -4,6 +4,7 @@ import { Services } from "@/components/sections/services";
 import { BeforeAfter } from "@/components/sections/before-after";
 import { InstagramFeed } from "@/components/sections/instagram-feed";
 import { Contact } from "@/components/sections/contact";
+import { Footer } from "@/components/sections/footer";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <BeforeAfter />
       <InstagramFeed />
       <Contact />
+      <Footer />
     </main>
   );
 };
