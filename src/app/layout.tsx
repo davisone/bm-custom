@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { CookieBanner } from "@/components/ui/cookie-banner";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-dark text-white font-sans antialiased">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

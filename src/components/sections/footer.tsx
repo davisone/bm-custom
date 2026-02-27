@@ -8,6 +8,16 @@ const quickLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+// Liens vers les pages légales
+const legalLinks = [
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "CGV", href: "/cgv" },
+  { label: "Politique de confidentialité", href: "/politique-confidentialite" },
+  { label: "Politique de cookies", href: "/politique-cookies" },
+  { label: "CGU", href: "/cgu" },
+  { label: "Retours & remboursements", href: "/politique-retour" },
+];
+
 export const Footer = () => {
   return (
     <footer className="bg-dark-lighter border-t border-gold/30">
@@ -91,8 +101,23 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Liens légaux */}
+        <div className="mt-8 border-t border-white/10 pt-6">
+          <nav aria-label="Liens légaux" className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs text-gray-500 transition-colors hover:text-gold"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
         {/* Barre du bas — Copyright */}
-        <div className="mt-8 border-t border-white/10 pt-8 text-center">
+        <div className="mt-4 pt-4 text-center">
           <p className="text-sm text-gray-500">
             &copy; 2026 BM Custom. Tous droits réservés.
           </p>
