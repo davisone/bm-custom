@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
+import { KeyFigures } from "@/components/sections/key-figures";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { BeforeAfter } from "@/components/sections/before-after";
 import { InstagramFeed } from "@/components/sections/instagram-feed";
@@ -13,6 +14,7 @@ const HomePage = () => {
     <main>
       <Navbar />
       <Hero />
+      <KeyFigures />
       <TireTrackDivider className="bg-dark" />
       <ServicesPreview />
       <TireTrackDivider className="bg-dark" />
