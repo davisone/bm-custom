@@ -39,7 +39,7 @@ export const ServiceCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group overflow-hidden rounded-2xl border border-transparent bg-dark-card transition-colors hover:border-gold/50"
+      className="group overflow-hidden rounded-2xl border border-transparent bg-dark-card transition-all hover:border-gold/50 hover:shadow-lg hover:shadow-gold/10"
     >
       {/* Image */}
       <div className="relative h-52 w-full overflow-hidden">

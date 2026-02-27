@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SparkEffect } from "@/components/ui/spark-effect";
 
 /* URL de l'image de fond — intérieur luxe automobile via Unsplash */
 const HERO_IMAGE_URL =
@@ -22,6 +23,12 @@ export const Hero = () => {
 
       {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black/60" />
+
+      {/* Étincelles flottantes */}
+      <SparkEffect className="z-[5]" />
+
+      {/* Dégradé bas pour transition douce vers la section suivante */}
+      <div className="absolute inset-x-0 bottom-0 z-[5] h-32 bg-gradient-to-t from-dark to-transparent" />
 
       {/* Contenu centré */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center">

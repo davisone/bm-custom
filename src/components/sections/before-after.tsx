@@ -58,6 +58,25 @@ export const BeforeAfter = () => {
       >
         <h2 className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
           Nos <span className="text-gold">Réalisations</span>
+          {/* Drapeau à damier décoratif */}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-2 inline-block align-middle text-gold/30"
+            aria-hidden="true"
+          >
+            <rect x="0" y="0" width="5" height="5" fill="currentColor" />
+            <rect x="10" y="0" width="5" height="5" fill="currentColor" />
+            <rect x="5" y="5" width="5" height="5" fill="currentColor" />
+            <rect x="15" y="5" width="5" height="5" fill="currentColor" />
+            <rect x="0" y="10" width="5" height="5" fill="currentColor" />
+            <rect x="10" y="10" width="5" height="5" fill="currentColor" />
+            <rect x="5" y="15" width="5" height="5" fill="currentColor" />
+            <rect x="15" y="15" width="5" height="5" fill="currentColor" />
+          </svg>
         </h2>
         <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gold" />
       </motion.div>

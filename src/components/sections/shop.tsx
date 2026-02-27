@@ -105,7 +105,7 @@ export const Shop = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-card transition-colors hover:border-gold/40"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-card transition-all hover:border-gold/40 hover:shadow-lg hover:shadow-gold/10"
             >
               {/* Image */}
               <div className="relative h-48 w-full overflow-hidden">
