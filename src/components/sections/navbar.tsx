@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Accueil", href: "#hero" },
   { label: "Services", href: "#services" },
-  { label: "Boutique", href: "#boutique" },
-  { label: "À propos", href: "#about" },
+  { label: "Réalisations", href: "#before-after" },
+  { label: "Instagram", href: "#instagram" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -23,6 +23,7 @@ const CartIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="h-6 w-6"
+    aria-hidden="true"
   >
     <circle cx="9" cy="21" r="1" />
     <circle cx="20" cy="21" r="1" />
@@ -41,6 +42,7 @@ const MenuIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="h-6 w-6"
+    aria-hidden="true"
   >
     <line x1="3" y1="6" x2="21" y2="6" />
     <line x1="3" y1="12" x2="21" y2="12" />
@@ -59,6 +61,7 @@ const CloseIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="h-6 w-6"
+    aria-hidden="true"
   >
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
@@ -92,10 +95,16 @@ export const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
-    /* Vérifier l'état initial au montage */
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
+
+  /* Initialiser l'état du scroll au montage sans setState synchrone dans useEffect */
+  useEffect(() => {
+    const initialScrolled = window.scrollY > 50;
+    if (initialScrolled) {
+      requestAnimationFrame(() => setIsScrolled(true));
+    }
+  }, []);
 
   /* Fermer le menu mobile lors du clic sur un lien */
   const handleLinkClick = () => {

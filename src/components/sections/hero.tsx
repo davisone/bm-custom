@@ -30,7 +30,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="font-display text-5xl font-bold text-white md:text-7xl"
+          className="font-display text-4xl font-bold text-white sm:text-5xl md:text-7xl"
         >
           Sublimez Votre Véhicule
         </motion.h1>
@@ -40,7 +40,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          className="mt-6 max-w-2xl text-lg text-gray-300"
+          className="mt-6 max-w-2xl text-base text-gray-300 sm:text-lg"
         >
           Spécialiste en customisation automobile depuis 4 ans
         </motion.p>
@@ -53,7 +53,7 @@ export const Hero = () => {
         >
           <a
             href="#services"
-            className="mt-10 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold uppercase tracking-wider text-black transition-colors hover:bg-gold-light"
+            className="mt-10 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wider text-black transition-colors hover:bg-gold-light sm:px-8 sm:py-4"
           >
             Découvrir nos services
           </a>

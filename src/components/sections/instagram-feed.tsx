@@ -47,7 +47,7 @@ const fallbackImages = [
 ];
 
 // Icône Instagram en SVG
-const InstagramIcon = () => (
+const InstagramIcon = ({ className = "h-8 w-8" }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -56,7 +56,8 @@ const InstagramIcon = () => (
     strokeWidth={1.5}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="h-8 w-8"
+    className={className}
+    aria-hidden="true"
   >
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
     <circle cx="12" cy="12" r="5" />
@@ -155,7 +156,7 @@ export const InstagramFeed = async () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-full border-2 border-gold bg-transparent px-8 py-3 font-semibold text-gold transition-all duration-300 hover:bg-gold hover:text-dark"
           >
-            <InstagramIcon />
+            <InstagramIcon className="h-5 w-5" />
             <span>Voir sur Instagram</span>
             <span aria-hidden="true">&rarr;</span>
           </a>

@@ -11,7 +11,7 @@ const quickLinks = [
 export const Footer = () => {
   return (
     <footer className="bg-dark-lighter border-t border-gold/30">
-      <div className="mx-auto max-w-7xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 lg:px-16">
         {/* Grille 3 colonnes desktop, empilé mobile */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Colonne 1 — Marque */}

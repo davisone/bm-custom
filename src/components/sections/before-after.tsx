@@ -47,7 +47,7 @@ export const BeforeAfter = () => {
   };
 
   return (
-    <section id="before-after" className="bg-dark px-4 py-20">
+    <section id="before-after" className="bg-dark px-4 py-20 md:px-8 lg:px-16">
       {/* Titre de section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -132,6 +132,7 @@ export const BeforeAfter = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="h-5 w-5"
+              aria-hidden="true"
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
@@ -168,6 +169,7 @@ export const BeforeAfter = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="h-5 w-5"
+              aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
             </svg>

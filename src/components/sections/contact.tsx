@@ -109,7 +109,7 @@ const contactItems = [
 
 /* Styles communs aux champs de formulaire */
 const inputClasses =
-  "w-full rounded-lg border border-white/10 bg-dark-card px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:border-gold";
+  "w-full rounded-lg border border-white/10 bg-dark-card px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold/30";
 
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);

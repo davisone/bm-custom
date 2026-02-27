@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 interface ServiceCardProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   index: number;
 }
 
