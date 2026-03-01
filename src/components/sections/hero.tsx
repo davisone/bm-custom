@@ -26,12 +26,12 @@ export const Hero = () => {
       {/* Overlay sombre principal */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Halo rouge/orange atmosphérique — effet dramatique */}
+      {/* Halo doré atmosphérique — effet dramatique */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 60%, rgba(180, 50, 20, 0.25) 0%, rgba(120, 30, 10, 0.1) 40%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 60%, rgba(212, 175, 55, 0.2) 0%, rgba(184, 150, 12, 0.08) 40%, transparent 70%)",
         }}
       />
 
@@ -52,14 +52,14 @@ export const Hero = () => {
 
       {/* Contenu centré */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center">
-        {/* Titre principal — dégradé rouge → blanc */}
+        {/* Titre principal — dégradé gold → blanc */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="font-display text-5xl font-black uppercase tracking-tight sm:text-6xl md:text-8xl"
         >
-          <span className="bg-gradient-to-r from-red-500 via-red-400 to-white bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-gold via-gold-light to-white bg-clip-text text-transparent">
             Sublimez Votre
           </span>
           <br />
