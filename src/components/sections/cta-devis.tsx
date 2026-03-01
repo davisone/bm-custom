@@ -2,15 +2,24 @@
 
 import { motion } from "framer-motion";
 
+/* Image de fond — close-up voiture dramatique */
+const BG_IMAGE =
+  "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=2560&q=80";
+
 export const CtaDevis = () => {
   return (
-    <section className="bg-dark px-4 py-20 md:px-8 lg:px-16">
+    <section
+      className="relative overflow-hidden bg-fixed bg-cover bg-center px-4 py-20 md:px-8 lg:px-16"
+      style={{ backgroundImage: `url(${BG_IMAGE})` }}
+    >
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-black/70" />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mx-auto max-w-3xl rounded-2xl border border-gold/20 bg-dark-card p-10 text-center md:p-14"
+        className="relative mx-auto max-w-3xl rounded-2xl border border-gold/20 bg-dark-card/90 p-10 text-center backdrop-blur-sm md:p-14"
       >
         <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
           Un projet en tête ?

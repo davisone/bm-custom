@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 
+/* Image de fond — intérieur automobile / tableau de bord */
+const BG_IMAGE =
+  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2560&q=80";
+
 /* Chiffres clés de l'entreprise */
 const stats = [
   { value: "7+", label: "Années d'expérience" },
@@ -22,8 +26,15 @@ const expertises = [
 
 export const About = () => {
   return (
-    <section id="about" className="bg-dark px-4 py-20 md:px-8 lg:px-16">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="about"
+      className="relative overflow-hidden bg-fixed bg-cover bg-center px-4 py-20 md:px-8 lg:px-16"
+      style={{ backgroundImage: `url(${BG_IMAGE})` }}
+    >
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-black/80" />
+
+      <div className="relative mx-auto max-w-7xl">
         {/* Titre de section */}
         <div className="mb-16 text-center">
           <h2 className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">

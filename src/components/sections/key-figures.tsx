@@ -3,6 +3,10 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useRef, useEffect } from "react";
 
+/* Image de fond — voiture dynamique */
+const BG_IMAGE =
+  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2560&q=80";
+
 /* Chiffres clés */
 const figures = [
   { value: 50, suffix: "+", label: "Véhicules personnalisés" },
@@ -43,8 +47,14 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
 
 export const KeyFigures = () => {
   return (
-    <section className="bg-dark px-4 py-16 md:px-8 lg:px-16">
-      <div className="mx-auto max-w-5xl">
+    <section
+      className="relative overflow-hidden bg-fixed bg-cover bg-center px-4 py-16 md:px-8 lg:px-16"
+      style={{ backgroundImage: `url(${BG_IMAGE})` }}
+    >
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-black/75" />
+
+      <div className="relative mx-auto max-w-5xl">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {figures.map((figure, index) => (
             <motion.div
