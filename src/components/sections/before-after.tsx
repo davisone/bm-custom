@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import { motion, AnimatePresence } from "framer-motion";
+
 /* Données des comparaisons avant/après */
 const comparisons = [
   {
@@ -28,6 +31,34 @@ const comparisons = [
     after:
       "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&q=80",
     label: "CarPlay",
+  },
+];
+
+/* Aperçu de quelques réalisations supplémentaires */
+const projects = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
+    title: "LED d'ambiance",
+    tag: "Éclairage",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+    title: "Ciel étoilé",
+    tag: "Intérieur",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&q=80",
+    title: "CarPlay",
+    tag: "Multimédia",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+    title: "Covering complet",
+    tag: "Extérieur",
   },
 ];
 
@@ -58,7 +89,6 @@ export const BeforeAfter = () => {
       >
         <h2 className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
           Nos <span className="text-gold">Réalisations</span>
-          {/* Drapeau à damier décoratif */}
           <svg
             width="20"
             height="20"
@@ -81,7 +111,7 @@ export const BeforeAfter = () => {
         <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gold" />
       </motion.div>
 
-      {/* Curseur de comparaison */}
+      {/* Curseur de comparaison avant/après */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -121,10 +151,10 @@ export const BeforeAfter = () => {
           </AnimatePresence>
 
           {/* Badges Avant / Après */}
-          <span className="pointer-events-none absolute left-3 top-3 rounded bg-black/60 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">
+          <span className="pointer-events-none absolute left-3 top-3 rounded bg-black/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
             Avant
           </span>
-          <span className="pointer-events-none absolute right-3 top-3 rounded bg-gold/80 px-3 py-1 text-xs font-semibold tracking-wide text-dark uppercase">
+          <span className="pointer-events-none absolute right-3 top-3 rounded bg-gold/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-dark">
             Après
           </span>
         </div>
@@ -136,7 +166,6 @@ export const BeforeAfter = () => {
 
         {/* Navigation : flèches + dots */}
         <div className="mt-6 flex items-center justify-center gap-6">
-          {/* Flèche gauche */}
           <button
             onClick={goToPrevious}
             aria-label="Réalisation précédente"
@@ -157,7 +186,6 @@ export const BeforeAfter = () => {
             </svg>
           </button>
 
-          {/* Dots */}
           <div className="flex items-center gap-3">
             {comparisons.map((_, index) => (
               <button
@@ -173,7 +201,6 @@ export const BeforeAfter = () => {
             ))}
           </div>
 
-          {/* Flèche droite */}
           <button
             onClick={goToNext}
             aria-label="Réalisation suivante"
@@ -194,6 +221,66 @@ export const BeforeAfter = () => {
             </svg>
           </button>
         </div>
+      </motion.div>
+
+      {/* Grille d'aperçu des projets */}
+      <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="group relative aspect-[3/4] overflow-hidden rounded-lg"
+          >
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-gold sm:text-xs">
+                {project.tag}
+              </span>
+              <p className="mt-1 text-sm font-semibold text-white sm:text-base">
+                {project.title}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* CTA vers la page réalisations */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mt-10 text-center"
+      >
+        <Link
+          href="/realisations"
+          className="inline-flex items-center gap-2 border border-gold/40 px-8 py-3 text-sm font-semibold uppercase tracking-wider text-gold transition-all hover:border-gold hover:bg-gold/10"
+        >
+          Voir toutes nos réalisations
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="h-4 w-4"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Link>
       </motion.div>
     </section>
   );
